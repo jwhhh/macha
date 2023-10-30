@@ -1,8 +1,12 @@
 """
 Metronome and Cadence Helper App
 """
+import time
+import threading
 import toga
 import playsound
+import numpy
+import simpleaudio
 
 
 class Macha(toga.App):
@@ -52,8 +56,26 @@ class Macha(toga.App):
     def run_metronome(self):
         while self.metronome_running:
             # replace 'sound_file.wav' with your metronome tick sound file path
-            playsound.playsound('sound_file.wav')
+            play_beep(440, 1)
             time.sleep(60.0 / int(self.bpm.value))
+
+
+def play_beep(frequency, duration):
+    # Get the sample rate and the sample length
+    sample_rate = 44100
+    sample_len = duration * sample_rate
+
+    # Generate the samples for a sine wave at the given frequency
+    t = numpy.linspace(0, duration, sample_len, False)
+    tone = numpy.sin(frequency * t * 2 * numpy.pi)
+
+    # Ensure that highest value is in 16-bit range
+    audio = tone * (2**15 - 1) / numpy.max(numpy.abs(tone))
+    audio = audio.astype(numpy.int16)
+
+    # Play the audio
+    play_obj = simpleaudio.play_buffer(audio, 1, 2, sample_rate)
+    play_obj.wait_done()
 
 
 def main():
