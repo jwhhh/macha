@@ -4,6 +4,14 @@ Matcha
 Development Notes
 -----------------
 
+Environment
+^^^^^^^^^^^
+
+``pip install -r requirements.txt``
+
+Run
+^^^
+
 To serve the app locally, run ``briefcase dev``.
 
 
