@@ -1,21 +1,21 @@
 # This project was generated with 0.3.16 using template: https://github.com/beeware/briefcase-template@v0.3.16
 [tool.briefcase]
-project_name = "Macha"
+project_name = "Matcha"
 bundle = "dev.jwhhh"
 version = "0.0.1"
-url = "https://github.com/jwhhh/macha"
+url = "https://github.com/jwhhh/matcha"
 license = "MIT license"
 author = "jwhhh"
 author_email = "hanghur@gmail.com"
 
-[tool.briefcase.app.macha]
-formal_name = "Macha"
-description = "Metronome and Cadence Helper App"
+[tool.briefcase.app.matcha]
+formal_name = "Matcha"
+description = "Metronome and tuner combined - hybrid app "
 long_description = """More details about the app should go here.
 """
-icon = "src/macha/resources/macha"
+icon = "src/matcha/resources/matcha"
 sources = [
-    "src/macha",
+    "src/matcha",
 ]
 test_sources = [
     "tests",
@@ -27,19 +27,19 @@ test_requires = [
     "pytest",
 ]
 
-[tool.briefcase.app.macha.macOS]
+[tool.briefcase.app.matcha.macOS]
 universal_build = true
 requires = [
     "toga-cocoa~=0.3.1",
     "std-nslog~=1.0.0"
 ]
 
-[tool.briefcase.app.macha.linux]
+[tool.briefcase.app.matcha.linux]
 requires = [
     "toga-gtk~=0.3.1",
 ]
 
-[tool.briefcase.app.macha.linux.system.debian]
+[tool.briefcase.app.matcha.linux.system.debian]
 system_requires = [
     # Needed to compile pycairo wheel
     "libcairo2-dev",
@@ -57,7 +57,7 @@ system_runtime_requires = [
     # "gir1.2-webkit2-4.0",
 ]
 
-[tool.briefcase.app.macha.linux.system.rhel]
+[tool.briefcase.app.matcha.linux.system.rhel]
 system_requires = [
     # Needed to compile pycairo wheel
     "cairo-gobject-devel",
@@ -76,7 +76,7 @@ system_runtime_requires = [
     # "webkit2gtk3",
 ]
 
-[tool.briefcase.app.macha.linux.system.suse]
+[tool.briefcase.app.matcha.linux.system.suse]
 system_requires = [
     # Needed to compile pycairo wheel
     "cairo-devel",
@@ -96,7 +96,7 @@ system_runtime_requires = [
     # "typelib(WebKit2)",
 ]
 
-[tool.briefcase.app.macha.linux.system.arch]
+[tool.briefcase.app.matcha.linux.system.arch]
 system_requires = [
     # Needed to compile pycairo wheel
     "cairo",
@@ -123,7 +123,7 @@ system_runtime_requires = [
     # "webkit2gtk",
 ]
 
-[tool.briefcase.app.macha.linux.appimage]
+[tool.briefcase.app.matcha.linux.appimage]
 manylinux = "manylinux2014"
 
 system_requires = [
@@ -143,30 +143,30 @@ linuxdeploy_plugins = [
     "DEPLOY_GTK_VERSION=3 gtk",
 ]
 
-[tool.briefcase.app.macha.linux.flatpak]
+[tool.briefcase.app.matcha.linux.flatpak]
 flatpak_runtime = "org.gnome.Platform"
 flatpak_runtime_version = "44"
 flatpak_sdk = "org.gnome.Sdk"
 
-[tool.briefcase.app.macha.windows]
+[tool.briefcase.app.matcha.windows]
 requires = [
     "toga-winforms~=0.3.1",
 ]
 
 # Mobile deployments
-[tool.briefcase.app.macha.iOS]
+[tool.briefcase.app.matcha.iOS]
 requires = [
     "toga-iOS~=0.3.1",
     "std-nslog~=1.0.0"
 ]
 
-[tool.briefcase.app.macha.android]
+[tool.briefcase.app.matcha.android]
 requires = [
     "toga-android~=0.3.1"
 ]
 
 # Web deployments
-[tool.briefcase.app.macha.web]
+[tool.briefcase.app.matcha.web]
 requires = [
     "toga-web~=0.3.1",
 ]

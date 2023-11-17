@@ -9,7 +9,7 @@ import numpy
 import simpleaudio
 
 
-class Macha(toga.App):
+class Matcha(toga.App):
 
     def startup(self):
         """
@@ -79,4 +79,4 @@ def play_beep(frequency, duration):
 
 
 def main():
-    return Macha()
+    return Matcha()
